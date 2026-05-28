@@ -4,6 +4,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "node",
-    include: ["suite/**/*.test.ts"],
+    include: ["conformance/suite/**/*.test.ts"],
   },
 });
