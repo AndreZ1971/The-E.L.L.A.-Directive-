@@ -1,6 +1,6 @@
 # The E.L.L.A. Directive
 
-**Version:** 1.0.0-draft  
+**Version:** 1.0.0  
 **Author:** Andre Zabel, Berlin, 2026  
 **Status:** Active development — not yet sealed
 
