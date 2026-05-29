@@ -2,7 +2,8 @@
 
 **Version:** 1.0.0  
 **Author:** Andre Zabel, Berlin, 2026  
-**Status:** Finalized — pending cryptographic seal (v1.1.0)
+**Status:** Finalized — the four prohibitions are set. Language is intentional and final.
+Cryptographic seal pending (v1.1.0). After sealing, no modification is possible.
 
 ---
 
