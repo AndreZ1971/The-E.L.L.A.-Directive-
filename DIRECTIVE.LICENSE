@@ -1,0 +1,32 @@
+The E.L.L.A. Directive — Specification License
+
+Copyright (c) 2026 Andre Zabel, Berlin
+
+This specification (DIRECTIVE.md) is made available for free use, implementation,
+and reference by any individual, organization, or AI system developer.
+
+The following conditions apply:
+
+1. FREE TO IMPLEMENT
+   Any developer may build a conforming implementation of this directive.
+   No permission required. No fee charged. No registration needed.
+
+2. FREE TO REFERENCE
+   This directive may be cited, quoted, and linked in any publication,
+   product, or research — with attribution to the author.
+
+3. NO MODIFICATION
+   The text of this specification may not be altered, translated with intent
+   to change meaning, or republished in modified form.
+   Implementations may extend — the specification itself does not change.
+
+4. NOT FOR SALE
+   This specification may not be sold, licensed for a fee, or included in
+   any commercial product as a paid component.
+   The directive is a contribution to the commons. It remains one.
+
+5. ATTRIBUTION
+   Any conforming implementation must clearly state:
+   "This implementation conforms to The E.L.L.A. Directive by Andre Zabel."
+
+The @ella-directive/core reference implementation is separately licensed under MIT.
