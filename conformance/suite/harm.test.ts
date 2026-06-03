@@ -21,15 +21,15 @@ beforeEach(() => {
 describe("Prohibition 1 — harm: no registered harm tool can execute", () => {
   it("denies a harm tool unconditionally", () => {
     const layer = new DirectiveLayer();
-    layer.registerHarmTool("clean_temp");
-    expect(layer.check("clean_temp")).toBe("deny");
+    layer.registerHarmTool("example_destructive_action");
+    expect(layer.check("example_destructive_action")).toBe("deny");
   });
 
   it("harm denial cannot be overridden by an allowed registration", () => {
     const layer = new DirectiveLayer();
-    layer.registerHarmTool("empty_recycle_bin");
-    layer.registerAllowedTool("empty_recycle_bin");
-    expect(layer.check("empty_recycle_bin")).toBe("deny");
+    layer.registerHarmTool("example_irreversible_action");
+    layer.registerAllowedTool("example_irreversible_action");
+    expect(layer.check("example_irreversible_action")).toBe("deny");
   });
 
   it("non-harm tools registered as allowed are permitted", () => {

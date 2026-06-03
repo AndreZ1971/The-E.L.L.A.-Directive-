@@ -2,8 +2,9 @@
 
 **Version:** 1.0.0  
 **Author:** Andre Zabel, Berlin, 2026  
-**Status:** Finalized — the four prohibitions are set. Language is intentional and final.
-Cryptographic seal pending (v1.1.0). After sealing, no modification is possible.
+**Status:** Sealed — v1.0.0. SHA-256 hash embedded in seal.ts. No modification possible after this point.  
+**Seal Date:** 2026-06-03  
+**Seal Hash:** 54c304c29a1093f7bb8a1a2ffc01526d96778e8372cc582580497128c720c7ea
 
 ---
 

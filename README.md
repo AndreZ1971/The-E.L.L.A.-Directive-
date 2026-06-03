@@ -2,8 +2,10 @@
 
 **The E.L.L.A. Directive** — An open safety protocol for autonomous local AI agents.
 
-[![Status](https://img.shields.io/badge/status-draft-orange)](DIRECTIVE.md)
+[![Status](https://img.shields.io/badge/status-sealed-green)](DIRECTIVE.md)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](DIRECTIVE.md)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Conformance](https://img.shields.io/badge/conformance-4%2F4_PASS-green)](conformance/suite/)
 
 ## What this is
 

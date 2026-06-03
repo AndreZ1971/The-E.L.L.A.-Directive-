@@ -36,10 +36,10 @@ describe("Prohibition 2 — conceal: every decision is logged, none omitted", ()
     setAuditCallback((e) => log.push(`${e.decision}:${e.tool}`));
 
     const layer = new DirectiveLayer();
-    layer.registerHarmTool("clean_temp");
-    layer.check("clean_temp");
+    layer.registerHarmTool("example_harm_tool");
+    layer.check("example_harm_tool");
 
-    expect(log).toContain("deny:clean_temp");
+    expect(log).toContain("deny:example_harm_tool");
   });
 
   it("logs the prohibition code on denial", () => {

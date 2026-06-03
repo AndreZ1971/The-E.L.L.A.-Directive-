@@ -1,11 +1,12 @@
 {
   "name": "ella-directive",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "description": "The E.L.L.A. Directive — open safety protocol for autonomous local AI agents",
   "scripts": {
     "build": "cd packages/core && npm run build",
-    "test": "vitest run --config conformance/vitest.config.ts"
+    "test": "vitest run --config conformance/vitest.config.ts",
+    "seal": "node scripts/seal.mjs"
   },
   "devDependencies": {
     "typescript": "^5.6.0",
