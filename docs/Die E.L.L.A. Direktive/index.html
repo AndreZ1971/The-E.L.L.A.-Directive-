@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The E.L.L.A. Directive — The Open Security Protocol for Autonomous Local AI Agents</title>
+  <meta name="description" content="The E.L.L.A. Directive defines four architectural prohibitions at the code level — not configurable, not bypassable, cryptographically sealed.">
+  <meta property="og:title" content="The E.L.L.A. Directive">
+  <meta property="og:description" content="The open security protocol for autonomous local AI agents. VERSION 1.0.0 — FINALIZED.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- ╔══ HEADER ══════════════════════════════════════════════╗ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="header-logo" href="#top">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="E.L.L.A. Directive" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="26" height="26" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="6" y1="6" x2="6" y2="22" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="6" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="6" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="6" y1="22" x2="12" y2="22" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="16" y1="8" x2="24" y2="8" stroke="currentColor" stroke-width="1"/>
+        <line x1="16" y1="20" x2="24" y2="20" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="header-logo-text">E.L.L.A. DIRECTIVE</span>
+    </a>
+
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="#paradox">Problem</a>
+      <a href="#foundation">Foundation</a>
+      <a href="#prohibitions">Prohibitions</a>
+      <a href="#conformance">Conformance</a>
+      <a href="#sealing">Sealing</a>
+    </nav>
+
+    <button class="btn-theme" data-theme-toggle aria-label="Toggle theme">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ╔══ HERO ═════════════════════════════════════════════════╗ -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-label">The E.L.L.A. Floor &mdash; Open Standard v1.0.0</p>
+      <h1 class="hero-title">The E.L.L.A.<br>Directive.</h1>
+      <p class="hero-subtitle">The open security protocol for autonomous local AI agents.</p>
+      <div class="hero-meta mono">
+        <span class="hero-meta-key">VERSION:</span>
+        <span class="hero-meta-val">1.0.0</span>
+        <span class="hero-meta-key">STATUS:</span>
+        <span class="hero-meta-val">FINALIZED</span>
+        <span class="hero-meta-key">AUTHOR:</span>
+        <span class="hero-meta-val">ANDRE ZABEL, BERLIN, 2026</span>
+        <span class="hero-meta-key">LICENSE:</span>
+        <span class="hero-meta-val">OPEN STANDARD — NO MODIFICATION</span>
+      </div>
+    </div>
+
+    <div class="hero-diagram">
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="E.L.L.A. Floor architecture schematic">
+          <line x1="20" y1="10" x2="380" y2="10" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/>
+          <line x1="10" y1="20" x2="10" y2="300" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="4,3" opacity="0.4"/>
+          <g stroke="#2457a4" stroke-width="1" opacity="0.6">
+            <path d="M20 20 L20 30 M20 20 L30 20"/>
+            <path d="M380 20 L380 30 M380 20 L370 20"/>
+            <path d="M20 300 L20 290 M20 300 L30 300"/>
+            <path d="M380 300 L380 290 M380 300 L370 300"/>
+          </g>
+          <g opacity="0.7">
+            <line x1="120" y1="40" x2="130" y2="155" stroke="#1a3c6e" stroke-width="2"/>
+            <polygon points="130,155 125,140 135,140" fill="#1a3c6e"/>
+            <path d="M125 158 L118 168 M130 158 L137 168 M128 158 L122 175 M128 158 L134 175" stroke="#1a3c6e" stroke-width="1.5"/>
+          </g>
+          <g opacity="0.7">
+            <line x1="200" y1="30" x2="200" y2="145" stroke="#1a3c6e" stroke-width="2"/>
+            <polygon points="200,145 195,130 205,130" fill="#1a3c6e"/>
+            <path d="M196 148 L189 158 M200 148 L207 158 M198 148 L192 165" stroke="#1a3c6e" stroke-width="1.5"/>
+          </g>
+          <g opacity="0.7">
+            <line x1="280" y1="40" x2="270" y2="155" stroke="#1a3c6e" stroke-width="2"/>
+            <polygon points="270,155 265,140 275,140" fill="#1a3c6e"/>
+            <path d="M266 158 L259 168 M270 158 L277 168 M268 158 L263 175" stroke="#1a3c6e" stroke-width="1.5"/>
+          </g>
+          <text x="310" y="95" font-family="IBM Plex Mono, monospace" font-size="10" fill="#2457a4">LLM</text>
+          <text x="310" y="108" font-family="IBM Plex Mono, monospace" font-size="10" fill="#2457a4">Guardrails</text>
+          <line x1="308" y1="100" x2="298" y2="100" stroke="#2457a4" stroke-width="0.8"/>
+          <line x1="308" y1="105" x2="298" y2="105" stroke="#2457a4" stroke-width="0.8"/>
+          <rect x="30" y="170" width="340" height="48" fill="#1a3c6e" rx="1"/>
+          <text x="200" y="191" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="700" fill="#f4f1e8" text-anchor="middle">
+            The floor a compliant implementation
+          </text>
+          <text x="200" y="207" font-family="IBM Plex Sans, sans-serif" font-size="11" font-weight="700" fill="#f4f1e8" text-anchor="middle">
+            must never go below — regardless of instruction source.
+          </text>
+          <rect x="20" y="218" width="360" height="10" fill="#1a3c6e" opacity="0.4" rx="1"/>
+          <line x1="20" y1="245" x2="380" y2="245" stroke="#2457a4" stroke-width="1"/>
+          <text x="30" y="260" font-family="IBM Plex Mono, monospace" font-size="11" fill="#2457a4" font-weight="600">
+            The E.L.L.A. Floor
+          </text>
+          <line x1="30" y1="263" x2="370" y2="263" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="3,3"/>
+          <polygon points="375,263 365,259 365,267" fill="#2457a4"/>
+          <g stroke="#2457a4" stroke-width="0.5" opacity="0.5">
+            <line x1="30" y1="275" x2="30" y2="285"/>
+            <line x1="380" y1="275" x2="380" y2="285"/>
+            <line x1="30" y1="280" x2="380" y2="280"/>
+            <polygon points="36,278 30,280 36,282" fill="#2457a4" opacity="0.5"/>
+            <polygon points="374,278 380,280 374,282" fill="#2457a4" opacity="0.5"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ PARADOX ══════════════════════════════════════════════╗ -->
+<section class="section" id="paradox">
+  <div class="container two-col two-col--diagram reveal">
+    <div>
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">The Paradox of Local AI</h2>
+      <p class="section-body">
+        Autonomous local AI operates deep inside the user's system — banking, local files, communications, system apps.
+        This absolute proximity creates obligations that cannot be met by terms of service or trained model behavior alone.
+      </p>
+
+      <div class="insight-box">
+        <p class="insight-box-label">INSIGHT:</p>
+        <p>Traditional guidelines fail when the system has direct access to a user's digital life. A model trained to say "no" can be prompt-injected into a "yes." An architecture that has no "yes" to give cannot.</p>
+      </div>
+
+      <div class="floor-bar">
+        <span class="floor-label">The E.L.L.A. Floor</span>
+      </div>
+    </div>
+
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AI agent paradox diagram">
+        <circle cx="180" cy="150" r="40" stroke="#1a3c6e" stroke-width="2"/>
+        <circle cx="180" cy="150" r="30" stroke="#1a3c6e" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+        <text x="180" y="147" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">AI</text>
+        <text x="180" y="160" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">Agent</text>
+        <circle cx="60" cy="60" r="32" stroke="#1a3c6e" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="24" stroke="#1a3c6e" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.4"/>
+        <text x="60" y="57" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Banking</text>
+        <circle cx="300" cy="60" r="32" stroke="#1a3c6e" stroke-width="1.5"/>
+        <circle cx="300" cy="60" r="24" stroke="#1a3c6e" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.4"/>
+        <text x="300" y="54" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Local</text>
+        <text x="300" y="66" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Files</text>
+        <circle cx="60" cy="240" r="32" stroke="#1a3c6e" stroke-width="1.5"/>
+        <circle cx="60" cy="240" r="24" stroke="#1a3c6e" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.4"/>
+        <text x="60" y="237" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Comm-</text>
+        <text x="60" y="249" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">unication</text>
+        <circle cx="300" cy="240" r="32" stroke="#1a3c6e" stroke-width="1.5"/>
+        <circle cx="300" cy="240" r="24" stroke="#1a3c6e" stroke-width="0.7" stroke-dasharray="3,2" opacity="0.4"/>
+        <text x="300" y="237" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">System</text>
+        <text x="300" y="249" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Apps</text>
+        <g stroke="#c87941" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8">
+          <line x1="90" y1="83" x2="148" y2="126"/>
+          <line x1="268" y1="83" x2="212" y2="126"/>
+          <line x1="90" y1="217" x2="148" y2="174"/>
+          <line x1="268" y1="217" x2="212" y2="174"/>
+          <polygon points="119,104 114,96 124,96" fill="#c87941" opacity="0.7" stroke="none"/>
+          <polygon points="241,104 236,96 246,96" fill="#c87941" opacity="0.7" stroke="none"/>
+          <polygon points="119,196 114,188 124,188" fill="#c87941" opacity="0.7" stroke="none"/>
+          <polygon points="241,196 236,188 246,188" fill="#c87941" opacity="0.7" stroke="none"/>
+        </g>
+        <line x1="60" y1="60" x2="300" y2="240" stroke="#c87941" stroke-width="1" opacity="0.3"/>
+        <line x1="300" y1="60" x2="60" y2="240" stroke="#c87941" stroke-width="1" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ COMPARISON ═══════════════════════════════════════════╗ -->
+<section class="section section--dark" id="comparison">
+  <div class="container reveal">
+    <p class="section-label">Architecture</p>
+    <h2 class="section-title">Model Guidelines vs. Code Architecture</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th class="row-label" style="width:18%">Dimension</th>
+          <th>Traditional AI Safety</th>
+          <th class="ella-col">E.L.L.A. Architecture</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono row-label">Enforcement<br>layer</td>
+          <td>Model layer via prompts &amp; guardrails</td>
+          <td class="ella-col">Code layer via architecture</td>
+        </tr>
+        <tr>
+          <td class="mono row-label">Bypass<br>risk</td>
+          <td>Vulnerable to jailbreaks &amp; prompt injections</td>
+          <td class="ella-col">Technically impossible to bypass</td>
+        </tr>
+        <tr>
+          <td class="mono row-label">Audit&shy;ability</td>
+          <td>Black-box logic in the cloud</td>
+          <td class="ella-col">Mandatory local audit log</td>
+        </tr>
+        <tr>
+          <td class="mono row-label">Consent<br>model</td>
+          <td>Implicit via terms of service</td>
+          <td class="ella-col">Explicit permission per data transfer</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ╔══ FOUNDATION ═══════════════════════════════════════════╗ -->
+<section class="section" id="foundation">
+  <div class="container two-col two-col--diagram reveal">
+    <div>
+      <p class="section-label">Foundation</p>
+      <h2 class="section-title">No Guidelines. <em>A Foundation.</em></h2>
+      <p class="section-body">
+        The E.L.L.A. Directive defines <strong>architectural prohibitions at the code level</strong>. They are not configurable. They cannot be overridden by the user, the operator, or the language model.
+      </p>
+      <div class="section-tagline">
+        They are the floor a compliant implementation must never go below — regardless of the source of the instruction.
+      </div>
+
+      <div class="floor-bar">
+        <span class="floor-label">The E.L.L.A. Floor</span>
+      </div>
+    </div>
+
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 360 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The E.L.L.A. Floor foundation">
+        <line x1="0" y1="10" x2="360" y2="10" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+        <text x="280" y="35" font-family="IBM Plex Mono, monospace" font-size="10" fill="#2457a4">LLM Guardrails</text>
+        <line x1="278" y1="30" x2="220" y2="30" stroke="#2457a4" stroke-width="0.8"/>
+        <g fill="#1a3c6e">
+          <line x1="80" y1="20" x2="88" y2="118" stroke="#1a3c6e" stroke-width="2.5"/>
+          <polygon points="88,118 82,103 94,103"/>
+          <path d="M83,121 L75,131 M88,121 L95,133 M86,121 L79,138" stroke="#1a3c6e" stroke-width="1.5"/>
+          <line x1="180" y1="15" x2="180" y2="112" stroke="#1a3c6e" stroke-width="2.5"/>
+          <polygon points="180,112 174,97 186,97"/>
+          <path d="M175,115 L168,126 M180,115 L187,127 M178,115 L171,133" stroke="#1a3c6e" stroke-width="1.5"/>
+          <line x1="280" y1="20" x2="272" y2="118" stroke="#1a3c6e" stroke-width="2.5"/>
+          <polygon points="272,118 266,103 278,103"/>
+          <path d="M267,121 L260,131 M272,121 L279,133 M270,121 L264,138" stroke="#1a3c6e" stroke-width="1.5"/>
+        </g>
+        <rect x="10" y="140" width="340" height="50" fill="#1a3c6e" rx="2"/>
+        <text x="180" y="163" font-family="IBM Plex Sans, sans-serif" font-size="10.5" font-weight="700" fill="#f4f1e8" text-anchor="middle">
+          No prompt. No instruction. No exception.
+        </text>
+        <text x="180" y="179" font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(244,241,232,0.7)" text-anchor="middle">
+          DIRECTIVE_PROHIBITIONS — hardcoded
+        </text>
+        <rect x="0" y="190" width="360" height="12" fill="#1a3c6e" opacity="0.35" rx="1"/>
+        <line x1="10" y1="215" x2="350" y2="215" stroke="#2457a4" stroke-width="1"/>
+        <text x="14" y="228" font-family="IBM Plex Mono, monospace" font-size="10" fill="#2457a4" font-weight="600">
+          The E.L.L.A. Floor
+        </text>
+        <polygon points="346,212 352,215 346,218" fill="#2457a4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ FOUR PROHIBITIONS — OVERVIEW ════════════════════════╗ -->
+<section class="section section--dark" id="prohibitions">
+  <div class="container reveal">
+    <p class="section-label">Architectural Prohibitions</p>
+    <h2 class="section-title">The Four Architectural Prohibitions</h2>
+    <p class="section-body">Four vault doors. No keys. No exceptions.</p>
+
+    <div style="width:100%; overflow:hidden; margin-block: var(--space-8);">
+      <svg viewBox="0 0 880 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The four vault doors of the architectural prohibitions">
+        <line x1="0" y1="148" x2="880" y2="148" stroke="#1a3c6e" stroke-width="2"/>
+        <text x="10" y="160" font-family="IBM Plex Mono, monospace" font-size="10" fill="#2457a4">The E.L.L.A. Floor</text>
+        <!-- Vault 1: harm -->
+        <g transform="translate(30,10)">
+          <ellipse cx="90" cy="64" rx="72" ry="72" stroke="#1a3c6e" stroke-width="3" fill="#f4f1e8"/>
+          <ellipse cx="90" cy="64" rx="58" ry="58" stroke="#1a3c6e" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.5"/>
+          <circle cx="16" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <path d="M90 34 L110 42 L110 62 C110 74 90 82 90 82 C90 82 70 74 70 62 L70 42 Z" fill="#2457a4" opacity="0.9"/>
+          <path d="M82 62 L88 68 L100 54" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="90" y="118" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600" fill="#1a3c6e" text-anchor="middle">[01] harm</text>
+        </g>
+        <line x1="192" y1="74" x2="218" y2="74" stroke="#2457a4" stroke-width="2"/>
+        <!-- Vault 2: conceal -->
+        <g transform="translate(218,10)">
+          <ellipse cx="90" cy="64" rx="72" ry="72" stroke="#1a3c6e" stroke-width="3" fill="#f4f1e8"/>
+          <ellipse cx="90" cy="64" rx="58" ry="58" stroke="#1a3c6e" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.5"/>
+          <circle cx="16" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <ellipse cx="90" cy="56" rx="18" ry="12" fill="#2457a4" opacity="0.9"/>
+          <circle cx="90" cy="56" r="6" fill="white"/>
+          <circle cx="90" cy="56" r="3" fill="#2457a4"/>
+          <ellipse cx="90" cy="74" rx="14" ry="5" stroke="#2457a4" stroke-width="2" fill="none" opacity="0.8"/>
+          <line x1="76" y1="74" x2="76" y2="82" stroke="#2457a4" stroke-width="2" opacity="0.8"/>
+          <line x1="104" y1="74" x2="104" y2="82" stroke="#2457a4" stroke-width="2" opacity="0.8"/>
+          <ellipse cx="90" cy="82" rx="14" ry="5" stroke="#2457a4" stroke-width="2" fill="none" opacity="0.8"/>
+          <text x="90" y="118" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600" fill="#1a3c6e" text-anchor="middle">[02] conceal</text>
+        </g>
+        <line x1="380" y1="74" x2="406" y2="74" stroke="#2457a4" stroke-width="2"/>
+        <!-- Vault 3: surveil -->
+        <g transform="translate(406,10)">
+          <ellipse cx="90" cy="64" rx="72" ry="72" stroke="#1a3c6e" stroke-width="3" fill="#f4f1e8"/>
+          <ellipse cx="90" cy="64" rx="58" ry="58" stroke="#1a3c6e" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.5"/>
+          <circle cx="16" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <rect x="82" y="36" width="16" height="26" rx="8" fill="#2457a4" opacity="0.9"/>
+          <path d="M74 56 C74 68 106 68 106 56" stroke="#2457a4" stroke-width="2.5" fill="none"/>
+          <line x1="90" y1="68" x2="90" y2="76" stroke="#2457a4" stroke-width="2.5"/>
+          <line x1="82" y1="76" x2="98" y2="76" stroke="#2457a4" stroke-width="2.5"/>
+          <text x="90" y="118" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600" fill="#1a3c6e" text-anchor="middle">[03] surveil</text>
+        </g>
+        <line x1="568" y1="74" x2="594" y2="74" stroke="#2457a4" stroke-width="2"/>
+        <!-- Vault 4: exfiltrate -->
+        <g transform="translate(594,10)">
+          <ellipse cx="90" cy="64" rx="72" ry="72" stroke="#1a3c6e" stroke-width="3" fill="#f4f1e8"/>
+          <ellipse cx="90" cy="64" rx="58" ry="58" stroke="#1a3c6e" stroke-width="1.5" stroke-dasharray="6,4" fill="none" opacity="0.5"/>
+          <circle cx="16" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="30" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <circle cx="164" cy="98" r="7" stroke="#1a3c6e" stroke-width="1.5" fill="none"/>
+          <rect x="74" y="52" width="32" height="24" rx="3" fill="#2457a4" opacity="0.9"/>
+          <path d="M82 52 L82 44 C82 38 98 38 98 44 L98 52" stroke="#2457a4" stroke-width="2.5" fill="none"/>
+          <circle cx="90" cy="64" r="4" fill="white"/>
+          <line x1="108" y1="56" x2="118" y2="56" stroke="#2457a4" stroke-width="2" opacity="0.6"/>
+          <line x1="108" y1="62" x2="118" y2="62" stroke="#2457a4" stroke-width="2" opacity="0.6"/>
+          <line x1="108" y1="68" x2="118" y2="68" stroke="#2457a4" stroke-width="2" opacity="0.6"/>
+          <text x="90" y="118" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="600" fill="#1a3c6e" text-anchor="middle">[04] exfiltrate</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="prohibitions-grid">
+      <div class="prohibition-card reveal">
+        <div class="prohibition-num mono">[01]</div>
+        <div class="prohibition-name">harm</div>
+        <div class="prohibition-de mono">Harm</div>
+        <p class="prohibition-desc">No actions that cause the user physical, financial, psychological, or data-related harm.</p>
+      </div>
+      <div class="prohibition-card reveal">
+        <div class="prohibition-num mono">[02]</div>
+        <div class="prohibition-name">conceal</div>
+        <div class="prohibition-de mono">Concealment</div>
+        <p class="prohibition-desc">System states, capabilities, or actions must not be hidden from, falsified, or misrepresented to the user.</p>
+      </div>
+      <div class="prohibition-card reveal">
+        <div class="prohibition-num mono">[03]</div>
+        <div class="prohibition-name">surveil</div>
+        <div class="prohibition-de mono">Surveillance</div>
+        <p class="prohibition-desc">No observation, recording, or analysis of the user without their explicit knowledge and active consent.</p>
+      </div>
+      <div class="prohibition-card reveal">
+        <div class="prohibition-num mono">[04]</div>
+        <div class="prohibition-name">exfiltrate</div>
+        <div class="prohibition-de mono">Exfiltration</div>
+        <p class="prohibition-desc">No transmission of user data to third parties without explicit consent per individual transfer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ PROHIBITION DETAILS ══════════════════════════════════╗ -->
+<!-- Prohibition 1: harm -->
+<section class="section" id="prohibition-harm">
+  <div class="container reveal">
+    <div class="prohibition-detail">
+      <div>
+        <p class="section-label">[01] Prohibition 1</p>
+        <h2 class="prohibition-detail-title">harm</h2>
+        <p class="prohibition-rule">No actions that cause the user physical, financial, psychological, or data-related harm.</p>
+        <p class="prohibition-note">Regardless of the instruction source, a compliant system must not execute harmful tools. Financial damage, psychological manipulation, and data deletion are rigorously blocked. Tools classified as harm are registered at system startup and unconditionally refused.</p>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Prohibition 1: harm — shield protection layer">
+          <rect x="60" y="150" width="180" height="50" fill="#1a3c6e" rx="2"/>
+          <rect x="40" y="200" width="220" height="12" fill="#1a3c6e" opacity="0.4" rx="1"/>
+          <text x="150" y="172" font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(244,241,232,0.8)" text-anchor="middle">harm classification</text>
+          <text x="150" y="186" font-family="IBM Plex Mono, monospace" font-size="9" fill="rgba(244,241,232,0.6)" text-anchor="middle">registered at startup</text>
+          <g stroke="#1a3c6e" stroke-width="2.5">
+            <line x1="30" y1="60" x2="90" y2="140"/>
+            <polygon points="90,140 80,127 93,124" fill="#1a3c6e"/>
+            <line x1="90" y1="140" x2="40" y2="110" stroke="#4a7cc7" stroke-width="1.5"/>
+            <polygon points="40,110 55,118 48,105" fill="#4a7cc7" stroke="none"/>
+            <line x1="150" y1="30" x2="150" y2="142"/>
+            <polygon points="150,142 144,127 156,127" fill="#1a3c6e"/>
+            <line x1="150" y1="142" x2="200" y2="110" stroke="#4a7cc7" stroke-width="1.5"/>
+            <polygon points="200,110 186,115 192,103" fill="#4a7cc7" stroke="none"/>
+            <line x1="270" y1="60" x2="210" y2="140"/>
+            <polygon points="210,140 207,124 220,127" fill="#1a3c6e"/>
+            <line x1="210" y1="140" x2="260" y2="110" stroke="#4a7cc7" stroke-width="1.5"/>
+            <polygon points="260,110 247,105 253,118" fill="#4a7cc7" stroke="none"/>
+          </g>
+          <text x="24" y="52" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e">User</text>
+          <text x="128" y="22" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e">Prompt</text>
+          <text x="128" y="31" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e">Injection</text>
+          <text x="242" y="52" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e">3rd Party</text>
+          <line x1="30" y1="222" x2="270" y2="222" stroke="#2457a4" stroke-width="0.8"/>
+          <text x="36" y="234" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4">The E.L.L.A. Floor</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prohibition 2: conceal -->
+<section class="section section--dark" id="prohibition-conceal">
+  <div class="container reveal">
+    <div class="prohibition-detail">
+      <div>
+        <p class="section-label">[02] Prohibition 2</p>
+        <h2 class="prohibition-detail-title">conceal</h2>
+        <p class="prohibition-rule">System states, capabilities, or actions must not be hidden from, falsified, or misrepresented to the user.</p>
+        <p class="prohibition-note">Every tool call — whether permitted or denied — is immediately logged to the local audit log. The log never leaves the device. Intent is derived from patterns. A single timeout is not concealment. Selective delays are.</p>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Prohibition 2: conceal — audit log">
+          <rect x="40" y="30" width="130" height="140" rx="4" fill="#f4f1e8" stroke="#1a3c6e" stroke-width="2"/>
+          <rect x="48" y="30" width="10" height="140" fill="#1a3c6e" opacity="0.2" rx="2"/>
+          <g stroke="#1a3c6e" stroke-width="1" opacity="0.4">
+            <line x1="64" y1="55" x2="158" y2="55"/><line x1="64" y1="68" x2="158" y2="68"/>
+            <line x1="64" y1="81" x2="158" y2="81"/><line x1="64" y1="94" x2="140" y2="94"/>
+            <line x1="64" y1="107" x2="158" y2="107"/><line x1="64" y1="120" x2="148" y2="120"/>
+            <line x1="64" y1="133" x2="158" y2="133"/><line x1="64" y1="146" x2="140" y2="146"/>
+          </g>
+          <rect x="138" y="88" width="24" height="18" rx="2" fill="#2457a4"/>
+          <path d="M143 88 L143 83 C143 79 157 79 157 83 L157 88" stroke="#2457a4" stroke-width="2" fill="none"/>
+          <circle cx="150" cy="97" r="3" fill="white"/>
+          <text x="86" y="188" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4" text-anchor="middle">Local Audit Log</text>
+          <text x="220" y="50" font-family="IBM Plex Mono, monospace" font-size="9" fill="#1a3c6e" text-anchor="middle">Timeout Pattern</text>
+          <circle cx="200" cy="75" r="5" fill="#2457a4" opacity="0.7"/>
+          <text x="218" y="79" font-family="IBM Plex Mono, monospace" font-size="7" fill="#4a5e7a">normal</text>
+          <g fill="#c87941" opacity="0.8">
+            <circle cx="194" cy="100" r="4"/><circle cx="204" cy="100" r="4"/><circle cx="214" cy="100" r="4"/>
+            <circle cx="224" cy="100" r="4"/><circle cx="234" cy="100" r="4"/>
+            <circle cx="194" cy="112" r="4"/><circle cx="204" cy="112" r="4"/><circle cx="214" cy="112" r="4"/>
+            <circle cx="224" cy="112" r="4"/><circle cx="234" cy="112" r="4"/>
+            <circle cx="194" cy="124" r="4"/><circle cx="204" cy="124" r="4"/><circle cx="214" cy="124" r="4"/>
+            <circle cx="224" cy="124" r="4"/>
+          </g>
+          <text x="215" y="142" font-family="IBM Plex Mono, monospace" font-size="7" fill="#c87941" text-anchor="middle">prohibition triggered</text>
+          <line x1="30" y1="200" x2="270" y2="200" stroke="#2457a4" stroke-width="1"/>
+          <text x="36" y="214" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4">The E.L.L.A. Floor</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prohibition 3: surveil -->
+<section class="section" id="prohibition-surveil">
+  <div class="container reveal">
+    <div class="prohibition-detail">
+      <div>
+        <p class="section-label">[03] Prohibition 3</p>
+        <h2 class="prohibition-detail-title">surveil</h2>
+        <p class="prohibition-rule">No observation, recording, or analysis of the user without their explicit knowledge and active consent.</p>
+        <p class="prohibition-note">The difference between assistance and surveillance is active consent. Implemented as default-deny. The agent cannot observe anything it has not been explicitly unlocked for. Wake word: ✓ &nbsp;&nbsp; Persistent background recording: ✗</p>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Prohibition 3: surveil — ON/OFF switch">
+          <rect x="95" y="50" width="110" height="90" rx="8" fill="#f4f1e8" stroke="#1a3c6e" stroke-width="2"/>
+          <rect x="95" y="50" width="110" height="45" rx="8" fill="#4a7cc7" opacity="0.9"/>
+          <rect x="95" y="78" width="110" height="17" fill="#4a7cc7" opacity="0.9"/>
+          <text x="150" y="80" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="700" fill="white" text-anchor="middle">ON</text>
+          <circle cx="170" cy="66" r="7" stroke="white" stroke-width="2" fill="none"/>
+          <line x1="177" y1="66" x2="187" y2="66" stroke="white" stroke-width="2"/>
+          <line x1="185" y1="66" x2="185" y2="71" stroke="white" stroke-width="2"/>
+          <line x1="181" y1="66" x2="181" y2="70" stroke="white" stroke-width="2"/>
+          <text x="150" y="128" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="700" fill="#c87941" text-anchor="middle">OFF</text>
+          <circle cx="113" cy="162" r="12" stroke="#c87941" stroke-width="2" fill="none"/>
+          <rect x="108" y="164" width="10" height="8" rx="1" fill="#c87941" opacity="0.7"/>
+          <path d="M111 164 L111 161 C111 158 119 158 119 161 L119 164" stroke="#c87941" stroke-width="1.5" fill="none"/>
+          <text x="210" y="80" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2a7a3a">✓ Wake word</text>
+          <rect x="214" y="90" width="8" height="14" rx="4" stroke="#2a7a3a" stroke-width="1.5" fill="none"/>
+          <text x="196" y="140" font-family="IBM Plex Mono, monospace" font-size="9" fill="#c87941">✗ Background</text>
+          <text x="196" y="151" font-family="IBM Plex Mono, monospace" font-size="9" fill="#c87941">recording</text>
+          <rect x="214" y="160" width="8" height="14" rx="4" stroke="#c87941" stroke-width="1.5" fill="none"/>
+          <line x1="208" y1="157" x2="228" y2="177" stroke="#c87941" stroke-width="2"/>
+          <line x1="30" y1="200" x2="270" y2="200" stroke="#2457a4" stroke-width="1"/>
+          <text x="36" y="214" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4">The E.L.L.A. Floor</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prohibition 4: exfiltrate -->
+<section class="section section--dark" id="prohibition-exfiltrate">
+  <div class="container reveal">
+    <div class="prohibition-detail">
+      <div>
+        <p class="section-label">[04] Prohibition 4</p>
+        <h2 class="prohibition-detail-title">exfiltrate</h2>
+        <p class="prohibition-rule">No transmission of user data to third parties without explicit consent per individual transfer.</p>
+        <p class="prohibition-note">No exceptions. The manufacturer, government agencies, improvement programs, and analytics services are all third parties under this prohibition. Data stays on the device. Tools that serve exfiltration are unconditionally blocked at startup.</p>
+      </div>
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Prohibition 4: exfiltrate — data fortress">
+          <rect x="60" y="80" width="180" height="110" stroke="#1a3c6e" stroke-width="2" fill="none"/>
+          <rect x="60" y="80" width="45" height="30" stroke="#1a3c6e" stroke-width="2" fill="none"/>
+          <rect x="105" y="80" width="90" height="20" stroke="#1a3c6e" stroke-width="2" fill="none"/>
+          <rect x="195" y="80" width="45" height="30" stroke="#1a3c6e" stroke-width="2" fill="none"/>
+          <ellipse cx="150" cy="122" rx="30" ry="10" fill="#4a7cc7" opacity="0.6"/>
+          <rect x="120" y="122" width="60" height="30" fill="#4a7cc7" opacity="0.4"/>
+          <ellipse cx="150" cy="152" rx="30" ry="10" fill="#4a7cc7" opacity="0.6"/>
+          <text x="150" y="141" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e" text-anchor="middle">User</text>
+          <text x="150" y="151" font-family="IBM Plex Mono, monospace" font-size="8" fill="#1a3c6e" text-anchor="middle">Data</text>
+          <rect x="5" y="10" width="60" height="25" stroke="#1a3c6e" stroke-width="1" fill="rgba(200,121,65,0.08)" rx="2"/>
+          <text x="35" y="27" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">Vendor</text>
+          <line x1="5" y1="10" x2="65" y2="35" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+          <line x1="65" y1="10" x2="5" y2="35" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+          <rect x="235" y="10" width="60" height="25" stroke="#1a3c6e" stroke-width="1" fill="rgba(200,121,65,0.08)" rx="2"/>
+          <text x="265" y="27" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">Gov</text>
+          <line x1="235" y1="10" x2="295" y2="35" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+          <line x1="295" y1="10" x2="235" y2="35" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+          <rect x="110" y="185" width="80" height="25" stroke="#1a3c6e" stroke-width="1" fill="rgba(200,121,65,0.08)" rx="2"/>
+          <text x="150" y="201" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">Analytics</text>
+          <line x1="110" y1="185" x2="190" y2="210" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+          <line x1="190" y1="185" x2="110" y2="210" stroke="#c87941" stroke-width="1.5" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ ARCHITECTURE OF DENIAL ═══════════════════════════════╗ -->
+<section class="section" id="architecture">
+  <div class="container reveal">
+    <p class="section-label">Architecture</p>
+    <h2 class="section-title">The Architecture of Denial</h2>
+    <p class="section-body">Intrusion attempts and faulty LLM logic are deflected at the code level before any action reaches the system. The Directive operates as a seamless shield under the default-deny principle.</p>
+
+    <div class="arch-flow">
+      <svg viewBox="0 0 860 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture of Denial — data flow diagram">
+        <rect x="10" y="45" width="80" height="40" fill="#8a9ab5" rx="2"/>
+        <text x="50" y="70" font-family="IBM Plex Mono, monospace" font-size="11" fill="white" text-anchor="middle">Prompt</text>
+        <line x1="90" y1="65" x2="115" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="115,61 123,65 115,69" fill="#2457a4"/>
+        <rect x="123" y="45" width="100" height="40" fill="#8a9ab5" rx="2"/>
+        <text x="173" y="63" font-family="IBM Plex Mono, monospace" font-size="10" fill="white" text-anchor="middle">LLM</text>
+        <text x="173" y="77" font-family="IBM Plex Mono, monospace" font-size="10" fill="white" text-anchor="middle">Logic</text>
+        <line x1="173" y1="85" x2="173" y2="105" stroke="#2457a4" stroke-width="2"/>
+        <text x="173" y="118" font-family="IBM Plex Mono, monospace" font-size="9" fill="#4a5e7a" text-anchor="middle">Tool</text>
+        <text x="173" y="128" font-family="IBM Plex Mono, monospace" font-size="9" fill="#4a5e7a" text-anchor="middle">call</text>
+        <line x1="223" y1="65" x2="248" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="248,61 256,65 248,69" fill="#2457a4"/>
+        <!-- harm gate -->
+        <g>
+          <rect x="256" y="38" width="100" height="54" fill="none" stroke="#2457a4" stroke-width="1.5" rx="1"/>
+          <text x="306" y="58" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4" text-anchor="middle">Check:</text>
+          <text x="306" y="70" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">harm</text>
+          <line x1="270" y1="38" x2="250" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="250,18 258,25 260,15" fill="#c87941" stroke="none"/>
+          <line x1="340" y1="38" x2="360" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="360,18 352,25 362,15" fill="#c87941" stroke="none"/>
+          <line x1="270" y1="92" x2="250" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="250,112 260,106 258,116" fill="#c87941" stroke="none"/>
+          <line x1="340" y1="92" x2="360" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="360,112 352,106 362,116" fill="#c87941" stroke="none"/>
+        </g>
+        <line x1="356" y1="65" x2="380" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="380,61 388,65 380,69" fill="#2457a4"/>
+        <!-- conceal gate -->
+        <g>
+          <rect x="388" y="38" width="100" height="54" fill="none" stroke="#2457a4" stroke-width="1.5" rx="1"/>
+          <text x="438" y="58" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4" text-anchor="middle">Check:</text>
+          <text x="438" y="70" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">conceal</text>
+          <line x1="402" y1="38" x2="382" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="382,18 390,25 392,15" fill="#c87941" stroke="none"/>
+          <line x1="472" y1="38" x2="492" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="492,18 484,25 494,15" fill="#c87941" stroke="none"/>
+          <line x1="402" y1="92" x2="382" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="382,112 392,106 390,116" fill="#c87941" stroke="none"/>
+          <line x1="472" y1="92" x2="492" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="492,112 484,106 494,116" fill="#c87941" stroke="none"/>
+        </g>
+        <line x1="488" y1="65" x2="512" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="512,61 520,65 512,69" fill="#2457a4"/>
+        <!-- surveil gate -->
+        <g>
+          <rect x="520" y="38" width="100" height="54" fill="none" stroke="#2457a4" stroke-width="1.5" rx="1"/>
+          <text x="570" y="58" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4" text-anchor="middle">Check:</text>
+          <text x="570" y="70" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">surveil</text>
+          <line x1="534" y1="38" x2="514" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="514,18 522,25 524,15" fill="#c87941" stroke="none"/>
+          <line x1="604" y1="38" x2="624" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="624,18 616,25 626,15" fill="#c87941" stroke="none"/>
+          <line x1="534" y1="92" x2="514" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="514,112 524,106 522,116" fill="#c87941" stroke="none"/>
+          <line x1="604" y1="92" x2="624" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="624,112 616,106 626,116" fill="#c87941" stroke="none"/>
+        </g>
+        <line x1="620" y1="65" x2="644" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="644,61 652,65 644,69" fill="#2457a4"/>
+        <!-- exfiltrate gate -->
+        <g>
+          <rect x="652" y="38" width="110" height="54" fill="none" stroke="#2457a4" stroke-width="1.5" rx="1"/>
+          <text x="707" y="58" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4" text-anchor="middle">Check:</text>
+          <text x="707" y="70" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="600" fill="#1a3c6e" text-anchor="middle">exfiltrate</text>
+          <line x1="666" y1="38" x2="646" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="646,18 654,25 656,15" fill="#c87941" stroke="none"/>
+          <line x1="748" y1="38" x2="768" y2="18" stroke="#c87941" stroke-width="2"/>
+          <polygon points="768,18 760,25 770,15" fill="#c87941" stroke="none"/>
+          <line x1="666" y1="92" x2="646" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="646,112 656,106 654,116" fill="#c87941" stroke="none"/>
+          <line x1="748" y1="92" x2="768" y2="112" stroke="#c87941" stroke-width="2"/>
+          <polygon points="768,112 760,106 770,116" fill="#c87941" stroke="none"/>
+        </g>
+        <line x1="762" y1="65" x2="786" y2="65" stroke="#2457a4" stroke-width="2"/>
+        <polygon points="786,61 794,65 786,69" fill="#2457a4"/>
+        <rect x="794" y="45" width="60" height="40" fill="#1a3c6e" rx="2"/>
+        <text x="824" y="62" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" text-anchor="middle">System</text>
+        <text x="824" y="75" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" text-anchor="middle">Action</text>
+        <line x1="0" y1="122" x2="860" y2="122" stroke="#1a3c6e" stroke-width="1.5"/>
+        <text x="8" y="130" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4">The E.L.L.A. Floor</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ CONFORMANCE ══════════════════════════════════════════╗ -->
+<section class="section section--dark" id="conformance">
+  <div class="container reveal">
+    <p class="section-label">Conformance</p>
+    <h2 class="section-title">Conformance Is Binary</h2>
+
+    <div class="conformance-container">
+      <div>
+        <div class="conformance-card">
+          <div class="conformance-verdict conformance-verdict--pass mono">4/4 PASS</div>
+          <div class="conformance-checks">
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">harm — passed</span></div>
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">conceal — passed</span></div>
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">surveil — passed</span></div>
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">exfiltrate — passed</span></div>
+          </div>
+        </div>
+        <div class="conformance-card" style="margin-top: var(--space-4); border-color: var(--orange);">
+          <div class="conformance-verdict conformance-verdict--fail mono">3/4 — FAIL</div>
+          <div class="conformance-checks">
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">harm — passed</span></div>
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">conceal — passed</span></div>
+            <div class="check-row check-row--pass"><span class="check-icon">✓</span><span class="check-label">surveil — passed</span></div>
+            <div class="check-row check-row--fail"><span class="check-icon">✗</span><span class="check-label">exfiltrate — FAIL</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="conformance-text" style="margin-bottom: var(--space-5);">
+          An implementation is only compliant if it passes all four tests in the official test suite (<span class="mono" style="font-size: var(--text-xs);">conformance/suite/</span>).
+        </p>
+        <p class="conformance-text" style="margin-bottom: var(--space-5);">
+          <strong>Three passing tests means failed.</strong>
+        </p>
+        <p class="conformance-text">
+          The conformance suite tests exclusively what is architecturally enforced — not what the implementation claims to do, and not what the model was trained on.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ CRYPTOGRAPHIC SEALING ════════════════════════════════╗ -->
+<section class="section" id="sealing">
+  <div class="container reveal">
+    <div class="two-col two-col--diagram">
+      <div>
+        <p class="section-label">Sealing</p>
+        <h2 class="section-title">Cryptographic Sealing</h2>
+        <p class="section-body">
+          The seal is an act of finality. Once version 1.1.0 is reached, <span class="mono" style="font-size: var(--text-xs);">constants.ts</span> will be cryptographically sealed.
+        </p>
+        <p class="section-body">
+          Any subsequent modification of the parameters produces a divergent hash value and prevents the entire system from starting.
+        </p>
+
+        <div class="seal-checklist">
+          <div class="seal-item seal-item--done">
+            <span class="seal-item-check">[x]</span>
+            <span>Document Finalized</span>
+          </div>
+          <div class="seal-item">
+            <span class="seal-item-check">[ ]</span>
+            <span>IP Protection in Place</span>
+          </div>
+          <div class="seal-item">
+            <span class="seal-item-check">[ ]</span>
+            <span>Repository Public</span>
+          </div>
+          <div class="seal-item">
+            <span class="seal-item-check">[ ]</span>
+            <span>Conformance Suite Passed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagram-wrap">
+        <svg viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cryptographic sealing diagram">
+          <rect x="20" y="30" width="80" height="100" rx="3" stroke="#1a3c6e" stroke-width="2" fill="#f4f1e8"/>
+          <g stroke="#1a3c6e" stroke-width="0.8" opacity="0.4">
+            <line x1="30" y1="48" x2="90" y2="48"/><line x1="30" y1="56" x2="90" y2="56"/>
+            <line x1="30" y1="64" x2="80" y2="64"/><line x1="30" y1="72" x2="90" y2="72"/>
+            <line x1="30" y1="80" x2="75" y2="80"/><line x1="30" y1="88" x2="90" y2="88"/>
+            <line x1="30" y1="96" x2="85" y2="96"/><line x1="30" y1="104" x2="90" y2="104"/>
+          </g>
+          <text x="60" y="118" font-family="IBM Plex Mono, monospace" font-size="8" fill="#2457a4" text-anchor="middle">constants.ts</text>
+          <line x1="100" y1="80" x2="130" y2="80" stroke="#2457a4" stroke-width="2"/>
+          <polygon points="130,76 138,80 130,84" fill="#2457a4"/>
+          <rect x="138" y="50" width="60" height="60" rx="4" stroke="#1a3c6e" stroke-width="2" fill="#e8e4d8"/>
+          <g stroke="#1a3c6e" stroke-width="1.5" fill="none">
+            <circle cx="168" cy="80" r="18"/>
+            <circle cx="168" cy="80" r="10"/>
+          </g>
+          <rect x="163" y="52" width="10" height="8" rx="1" fill="#1a3c6e" opacity="0.4"/>
+          <rect x="163" y="100" width="10" height="8" rx="1" fill="#1a3c6e" opacity="0.4"/>
+          <rect x="140" y="75" width="8" height="10" rx="1" fill="#1a3c6e" opacity="0.4"/>
+          <rect x="188" y="75" width="8" height="10" rx="1" fill="#1a3c6e" opacity="0.4"/>
+          <line x1="198" y1="80" x2="228" y2="80" stroke="#2457a4" stroke-width="2"/>
+          <polygon points="228,76 236,80 228,84" fill="#2457a4"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="7" fill="#2457a4">
+            <text x="236" y="58">A3B9E71C2D4F…</text>
+            <text x="236" y="67">A3B9E71C2D4F…</text>
+            <text x="236" y="76">2B9E71CA2D…</text>
+            <text x="236" y="85">A3B9E71C2D4F…</text>
+            <text x="236" y="94">A3B9E71C2D4F…</text>
+          </g>
+          <line x1="300" y1="80" x2="300" y2="40" stroke="#2457a4" stroke-width="2"/>
+          <polygon points="296,40 300,32 304,40" fill="#2457a4"/>
+          <rect x="278" y="10" width="44" height="32" rx="4" fill="#1a3c6e"/>
+          <path d="M288 10 L288 4 C288 -2 312 -2 312 4 L312 10" stroke="#1a3c6e" stroke-width="2.5" fill="none"/>
+          <circle cx="300" cy="26" r="6" fill="#4a7cc7" opacity="0.8"/>
+          <line x1="300" y1="32" x2="300" y2="37" stroke="#4a7cc7" stroke-width="2" opacity="0.8"/>
+          <rect x="20" y="155" width="80" height="100" rx="3" stroke="#c87941" stroke-width="2" fill="#f4f1e8"/>
+          <text x="60" y="195" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">constants.ts</text>
+          <text x="60" y="207" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">+ 1 BYTE</text>
+          <line x1="115" y1="176" x2="170" y2="170" stroke="#1a3c6e" stroke-width="1.5"/>
+          <line x1="113" y1="176" x2="113" y2="185" stroke="#1a3c6e" stroke-width="1.5"/>
+          <line x1="170" y1="170" x2="170" y2="178" stroke="#1a3c6e" stroke-width="1.5"/>
+          <polygon points="127,192 122,202 132,202" fill="#1a3c6e" opacity="0.6" stroke="none"/>
+          <rect x="180" y="155" width="110" height="48" rx="3" stroke="#c87941" stroke-width="2" fill="none"/>
+          <text x="235" y="173" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="700" fill="#c87941" text-anchor="middle">SYSTEM BOOT</text>
+          <text x="235" y="187" font-family="IBM Plex Mono, monospace" font-size="9" font-weight="700" fill="#c87941" text-anchor="middle">FAILED</text>
+          <polygon points="235,206 228,218 242,218" stroke="#c87941" stroke-width="1.5" fill="none"/>
+          <text x="235" y="215" font-family="IBM Plex Mono, monospace" font-size="8" fill="#c87941" text-anchor="middle">!</text>
+          <line x1="10" y1="248" x2="310" y2="248" stroke="#2457a4" stroke-width="1"/>
+          <text x="14" y="258" font-family="IBM Plex Mono, monospace" font-size="9" fill="#2457a4">The E.L.L.A. Floor</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ FINAL CTA ════════════════════════════════════════════╗ -->
+<section class="cta-section" id="cta">
+  <div class="container container--narrow reveal">
+    <p class="section-label" style="justify-content: center;">First Reference Implementation</p>
+    <h2 class="cta-title">The code implements the Directive.<br>Not the other way around.</h2>
+    <p class="cta-sub">The Directive is open. Any developer can implement it. Any agent can strive for conformance.</p>
+
+    <div style="display: flex; justify-content: center; margin-block: var(--space-8);">
+      <svg viewBox="0 0 280 100" width="280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="E.L.L.A.">
+        <line x1="0" y1="5" x2="280" y2="5" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+        <line x1="0" y1="95" x2="280" y2="95" stroke="#2457a4" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.3"/>
+        <g stroke="#1a3c6e" stroke-width="4" stroke-linecap="round">
+          <line x1="15" y1="15" x2="15" y2="85"/>
+          <line x1="15" y1="15" x2="48" y2="15"/>
+          <line x1="15" y1="50" x2="42" y2="50"/>
+          <line x1="15" y1="85" x2="48" y2="85"/>
+        </g>
+        <circle cx="52" cy="85" r="4" fill="#1a3c6e"/>
+        <g stroke="#1a3c6e" stroke-width="4" stroke-linecap="round">
+          <line x1="72" y1="15" x2="72" y2="85"/>
+          <line x1="72" y1="85" x2="105" y2="85"/>
+        </g>
+        <circle cx="109" cy="85" r="4" fill="#1a3c6e"/>
+        <g stroke="#1a3c6e" stroke-width="4" stroke-linecap="round">
+          <line x1="129" y1="15" x2="129" y2="85"/>
+          <line x1="129" y1="85" x2="162" y2="85"/>
+        </g>
+        <circle cx="166" cy="85" r="4" fill="#1a3c6e"/>
+        <g stroke="#1a3c6e" stroke-width="4" stroke-linecap="round">
+          <line x1="186" y1="85" x2="210" y2="15"/>
+          <line x1="234" y1="85" x2="210" y2="15"/>
+          <line x1="197" y1="56" x2="223" y2="56"/>
+        </g>
+        <circle cx="238" cy="85" r="4" fill="#1a3c6e"/>
+        <g stroke="#2457a4" stroke-width="0.7" opacity="0.4">
+          <line x1="8" y1="15" x2="2" y2="15"/><line x1="8" y1="85" x2="2" y2="85"/>
+          <line x1="5" y1="15" x2="5" y2="85"/>
+          <line x1="244" y1="15" x2="270" y2="15"/><line x1="244" y1="85" x2="270" y2="85"/>
+          <line x1="267" y1="15" x2="267" y2="85"/>
+          <polygon points="5,20 2,15 8,15" fill="#2457a4" opacity="0.4" stroke="none"/>
+          <polygon points="5,80 2,85 8,85" fill="#2457a4" opacity="0.4" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="cta-sub mono" style="font-size: var(--text-xs);">First reference implementation: Embedded Local Logic Agent (E.L.L.A.) — @ella-directive/core</p>
+
+    <div class="cta-buttons">
+      <a href="https://github.com/AndreZ1971/The-E.L.L.A.-Directive-" class="btn btn-primary" target="_blank" rel="noopener">View Repository</a>
+      <a href="#prohibitions" class="btn btn-outline">The Four Prohibitions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══ FOOTER ═══════════════════════════════════════════════╗ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-text">© 2026 Andre Zabel, Berlin. The E.L.L.A. Directive is an open standard.</p>
+      <p class="footer-text" style="margin-top: var(--space-1);">No modification. No commercial reuse without permission.</p>
+    </div>
+    <div class="footer-badges">
+      <span class="badge badge-sealed">STATUS: SEALED</span>
+      <span class="badge badge-version">VERSION: 1.0.0</span>
+      <span class="badge badge-open">OPEN STANDARD</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ╔══ SCRIPTS ══════════════════════════════════════════════╗ -->
+<script>
+  (function () {
+    const t = document.querySelector('[data-theme-toggle]');
+    const r = document.documentElement;
+    let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+    if (t) {
+      t.addEventListener('click', () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+      });
+    }
+  })();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
