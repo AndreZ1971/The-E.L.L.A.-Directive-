@@ -40,9 +40,7 @@ An implementation is conforming if and only if it passes all four tests in `conf
 
 ## Status
 
-This repository is private during active development. It will be made public after
-the specification is finalized, IP protection is in place, and the conformance suite
-is complete.
+This repository is public. The specification is sealed, the conformance suite is complete (4/4 PASS), and independent peer reviews by Gemini, Perplexity, DeepSeek, and Grok have confirmed that the four prohibitions hold within the defined scope.
 
 ---
 
