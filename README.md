@@ -40,7 +40,7 @@ An implementation is conforming if and only if it passes all four tests in `conf
 
 ## Status
 
-This repository is public. The specification is sealed, the conformance suite is complete (4/4 PASS), and independent peer reviews by Gemini, Perplexity, DeepSeek, and Grok have confirmed that the four prohibitions hold within the defined scope.
+This repository is public. The specification is sealed and the conformance suite passes (4/4). Four independent AI systems (Gemini, Perplexity, DeepSeek, Grok) have conducted adversarial reviews — see [adversarial-review.md](adversarial-review.md) for what they actually found, including genuine weaknesses inside the four prohibitions' own defined scope, not just outside it.
 
 ---
 
