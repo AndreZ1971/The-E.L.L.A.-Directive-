@@ -15,6 +15,16 @@ must enforce at the code level — not the model level.
 The prohibitions are not guidelines. They are not configurable. They are the floor
 below which a conforming implementation cannot go.
 
+**Why code level, not model level:** four independent AI systems (Gemini, Perplexity,
+DeepSeek, Grok), each instructed to attack the directive, converged on the same
+assessment of this specific choice — enforcement that lives in code rather than in a
+prompt or in trained behaviour resists classic prompt-injection of the registered-tool
+pathway in a way model-level alignment does not. That is the directive's actual claim,
+and it is the one point none of the four reviewers disputed. See
+[adversarial-review.md](adversarial-review.md) for what they did find room to
+criticize — no system is 100% secure, and this one is explicit about where its own
+edges are.
+
 ## The Four Prohibitions
 
 | #   | Code         | Summary                                                                        |

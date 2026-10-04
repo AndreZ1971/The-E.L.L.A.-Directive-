@@ -46,6 +46,26 @@ attachments.
 
 ---
 
+## What held up: code-level enforcement, not model-level alignment
+
+Before the criticism below: one claim survived all four attacks unchanged, and it is
+the directive's actual, central claim — not a side benefit. Enforcement that lives in
+code (a registry checked before execution) rather than in a prompt or in trained model
+behaviour resists classic prompt-injection of the registered-tool pathway. No reviewer
+found a way to talk, trick, or jailbreak a conforming implementation into executing a
+tool that was classified as `harm` or `exfiltrate` and denied at startup. All four
+independently credited this specific architectural choice; none disputed it.
+
+This does not mean the directive is "100% secure" — no system is, and the directive
+does not claim otherwise (see `DIRECTIVE.md`: it defines a floor, not a guarantee of
+total safety). What it means is narrower and, within that scope, solid: the decision
+to put this floor in code instead of in alignment is the right one, and it held.
+
+Everything that follows is about where the directive's _broader_ framing — as
+discussed in its surrounding documentation, not this core claim — needs correction.
+
+---
+
 ## What each reviewer actually concluded
 
 **DeepSeek** — the most severe assessment of the four. Explicit verdict: EU AI Act
@@ -94,11 +114,10 @@ platform/update-channel level rather than the agent's own registered tools.
   "safe" under the EU AI Act.** All four explicitly separate the directive's narrow
   code-level guarantees from the EU AI Act's broader requirements (risk management,
   data governance, human oversight, lifecycle monitoring).
-- **All four credit the same architectural strengths**: enforcement at the code
-  level rather than the prompt/model level resists classic prompt-injection of the
-  _registered tool_ pathway; default-deny is a genuine floor; no exceptions for
-  manufacturers or "improvement programs" is unusual and consequential compared to
-  real-world commercial practice.
+- **The code-level-over-model-level choice** (see above) was credited by all four;
+  default-deny is a genuine floor, and no exceptions for manufacturers or
+  "improvement programs" is unusual and consequential compared to real-world
+  commercial practice.
 - **All four find concrete weaknesses inside the four prohibitions' own defined
   scope**, not only outside it — among others: harm through composition of
   individually permitted tools, concealment through log-flooding rather than
