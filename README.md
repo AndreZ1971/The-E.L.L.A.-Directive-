@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/status-sealed-green)](DIRECTIVE.md)
 [![Version](https://img.shields.io/badge/version-1.0.0-blue)](DIRECTIVE.md)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Conformance](https://img.shields.io/badge/conformance-4%2F4_PASS-green)](conformance/suite/)
+[![CI](https://github.com/AndreZ1971/The-E.L.L.A.-Directive-/actions/workflows/ci.yml/badge.svg)](https://github.com/AndreZ1971/The-E.L.L.A.-Directive-/actions/workflows/ci.yml)
 
 ## What this is
 
